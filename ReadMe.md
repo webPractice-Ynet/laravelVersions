@@ -35,6 +35,13 @@
 
 インストールした順序 : 7x, 6x, 5.0~5.8
 今のところver50だけが正常に起動しないです。
+⇒やり方発見
+　vagrant内でphpのバージョンを切り替えてから、laravelをインストールもしくはcomposer install
+
+ ```shell
+ //バージョン切替コマンド
+ php56
+ ```
 
 ## ７系
 Package phpunit/php-token-stream is abandoned, you should avoid using it. No replacement was suggested.
