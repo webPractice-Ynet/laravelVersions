@@ -272,3 +272,87 @@ Generating optimized autoload files
 
 > Illuminate\Foundation\ComposerScripts::postAutoloadDump
 > @php artisan package:discover --ansi
+
+
+
+
+### アクセスログ
+
+## PHP7.4
+
+[2020-09-02 04:44:58] production.ERROR: ErrorException: Use of undefined constant MCRYPT_RIJNDAEL_128 - assumed 'MCRYPT_RIJNDAEL_128' (this will throw an Error in a future version of PHP) in /home/vagrant/code/Laravel/50/vendor/compiled.php:6539
+Stack trace:
+#0 /home/vagrant/code/Laravel/50/vendor/compiled.php(6539): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/vagrant/code/Laravel/50/vendor/compiled.php(1027): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}()
+#2 /home/vagrant/code/Laravel/50/vendor/compiled.php(980): Illuminate\Container\Container->build()
+#3 /home/vagrant/code/Laravel/50/vendor/compiled.php(1493): Illuminate\Container\Container->make()
+#4 /home/vagrant/code/Laravel/50/vendor/compiled.php(1072): Illuminate\Foundation\Application->make()
+#5 /home/vagrant/code/Laravel/50/vendor/compiled.php(1056): Illuminate\Container\Container->resolveClass()
+#6 /home/vagrant/code/Laravel/50/vendor/compiled.php(1042): Illuminate\Container\Container->getDependencies()
+#7 /home/vagrant/code/Laravel/50/vendor/compiled.php(980): Illuminate\Container\Container->build()
+#8 /home/vagrant/code/Laravel/50/vendor/compiled.php(1493): Illuminate\Container\Container->make()
+#9 /home/vagrant/code/Laravel/50/vendor/compiled.php(8944): Illuminate\Foundation\Application->make()
+#10 /home/vagrant/code/Laravel/50/vendor/compiled.php(2478): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}()
+#11 /home/vagrant/code/Laravel/50/vendor/compiled.php(8944): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle()
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}()
+#13 /home/vagrant/code/Laravel/50/vendor/compiled.php(8935): call_user_func()
+#14 /home/vagrant/code/Laravel/50/vendor/compiled.php(1891): Illuminate\Pipeline\Pipeline->then()
+#15 /home/vagrant/code/Laravel/50/vendor/compiled.php(1880): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#16 /home/vagrant/code/Laravel/50/public/index.php(55): Illuminate\Foundation\Http\Kernel->handle()
+#17 {main}  
+[2020-09-02 04:44:58] production.ERROR: ErrorException: Use of undefined constant MCRYPT_RIJNDAEL_128 - assumed 'MCRYPT_RIJNDAEL_128' (this will throw an Error in a future version of PHP) in /home/vagrant/code/Laravel/50/vendor/compiled.php:6539
+Stack trace:
+#0 /home/vagrant/code/Laravel/50/vendor/compiled.php(6539): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/vagrant/code/Laravel/50/vendor/compiled.php(1027): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}()
+#2 /home/vagrant/code/Laravel/50/vendor/compiled.php(980): Illuminate\Container\Container->build()
+#3 /home/vagrant/code/Laravel/50/vendor/compiled.php(1493): Illuminate\Container\Container->make()
+#4 /home/vagrant/code/Laravel/50/vendor/compiled.php(1072): Illuminate\Foundation\Application->make()
+#5 /home/vagrant/code/Laravel/50/vendor/compiled.php(1056): Illuminate\Container\Container->resolveClass()
+#6 /home/vagrant/code/Laravel/50/vendor/compiled.php(1042): Illuminate\Container\Container->getDependencies()
+#7 /home/vagrant/code/Laravel/50/vendor/compiled.php(980): Illuminate\Container\Container->build()
+#8 /home/vagrant/code/Laravel/50/vendor/compiled.php(1493): Illuminate\Container\Container->make()
+#9 /home/vagrant/code/Laravel/50/vendor/compiled.php(1897): Illuminate\Foundation\Application->make()
+#10 /home/vagrant/code/Laravel/50/public/index.php(60): Illuminate\Foundation\Http\Kernel->terminate()
+
+
+### PHP7.1
+
+[2020-09-02 04:56:55] production.ERROR: ErrorException: Function mcrypt_get_iv_size() is deprecated in /home/vagrant/code/Laravel/50/vendor/compiled.php:11911
+Stack trace:
+#0 /home/vagrant/code/Laravel/50/vendor/compiled.php(11911): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8192, 'Function mcrypt...', '/home/vagrant/c...', 11911, Array)
+#1 /home/vagrant/code/Laravel/50/vendor/compiled.php(11902): Illuminate\Encryption\Encrypter->updateBlockSize()
+#2 /home/vagrant/code/Laravel/50/vendor/compiled.php(6541): Illuminate\Encryption\Encrypter->setCipher('rijndael-128')
+#3 /home/vagrant/code/Laravel/50/vendor/compiled.php(1027): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#4 /home/vagrant/code/Laravel/50/vendor/compiled.php(980): Illuminate\Container\Container->build(Object(Closure), Array)
+#5 /home/vagrant/code/Laravel/50/vendor/compiled.php(1493): Illuminate\Container\Container->make('encrypter', Array)
+#6 /home/vagrant/code/Laravel/50/vendor/compiled.php(1072): Illuminate\Foundation\Application->make('encrypter')
+#7 /home/vagrant/code/Laravel/50/vendor/compiled.php(1056): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#8 /home/vagrant/code/Laravel/50/vendor/compiled.php(1042): Illuminate\Container\Container->getDependencies(Array, Array)
+#9 /home/vagrant/code/Laravel/50/vendor/compiled.php(980): Illuminate\Container\Container->build('Illuminate\\Cook...', Array)
+#10 /home/vagrant/code/Laravel/50/vendor/compiled.php(1493): Illuminate\Container\Container->make('Illuminate\\Cook...', Array)
+#11 /home/vagrant/code/Laravel/50/vendor/compiled.php(8944): Illuminate\Foundation\Application->make('Illuminate\\Cook...')
+#12 /home/vagrant/code/Laravel/50/vendor/compiled.php(2478): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 /home/vagrant/code/Laravel/50/vendor/compiled.php(8944): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#14 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#15 /home/vagrant/code/Laravel/50/vendor/compiled.php(8935): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#16 /home/vagrant/code/Laravel/50/vendor/compiled.php(1891): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#17 /home/vagrant/code/Laravel/50/vendor/compiled.php(1880): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#18 /home/vagrant/code/Laravel/50/public/index.php(55): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#19 {main}  
+[2020-09-02 04:56:55] production.ERROR: ErrorException: Function mcrypt_get_iv_size() is deprecated in /home/vagrant/code/Laravel/50/vendor/compiled.php:11911
+Stack trace:
+#0 /home/vagrant/code/Laravel/50/vendor/compiled.php(11911): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8192, 'Function mcrypt...', '/home/vagrant/c...', 11911, Array)
+#1 /home/vagrant/code/Laravel/50/vendor/compiled.php(11902): Illuminate\Encryption\Encrypter->updateBlockSize()
+#2 /home/vagrant/code/Laravel/50/vendor/compiled.php(6541): Illuminate\Encryption\Encrypter->setCipher('rijndael-128')
+#3 /home/vagrant/code/Laravel/50/vendor/compiled.php(1027): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#4 /home/vagrant/code/Laravel/50/vendor/compiled.php(980): Illuminate\Container\Container->build(Object(Closure), Array)
+#5 /home/vagrant/code/Laravel/50/vendor/compiled.php(1493): Illuminate\Container\Container->make('encrypter', Array)
+#6 /home/vagrant/code/Laravel/50/vendor/compiled.php(1072): Illuminate\Foundation\Application->make('encrypter')
+#7 /home/vagrant/code/Laravel/50/vendor/compiled.php(1056): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#8 /home/vagrant/code/Laravel/50/vendor/compiled.php(1042): Illuminate\Container\Container->getDependencies(Array, Array)
+#9 /home/vagrant/code/Laravel/50/vendor/compiled.php(980): Illuminate\Container\Container->build('Illuminate\\Cook...', Array)
+#10 /home/vagrant/code/Laravel/50/vendor/compiled.php(1493): Illuminate\Container\Container->make('Illuminate\\Cook...', Array)
+#11 /home/vagrant/code/Laravel/50/vendor/compiled.php(1897): Illuminate\Foundation\Application->make('Illuminate\\Cook...')
+#12 /home/vagrant/code/Laravel/50/public/index.php(60): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Symfony\Component\HttpFoundation\Response))
+#13 {main}  
+
