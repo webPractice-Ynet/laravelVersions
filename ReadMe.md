@@ -24,14 +24,17 @@
 
 192.168.10.30 57.homestead.test
 
+192.168.10.30 58.homestead.test
+
 192.168.10.30 6x.homestead.test
 
 192.168.10.30 7x.homestead.test
 
 
-## インストール時に出たエラー
+## インストール時に出たエラーと渓谷
 
 インストールした順序 : 7x, 6x, 5.0~5.8
+今のところver50だけが正常に起動しないです。
 
 ## ７系
 Package phpunit/php-token-stream is abandoned, you should avoid using it. No replacement was suggested.
